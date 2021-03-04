@@ -10,10 +10,7 @@ const PORT  = process.env.PORT || 3001;
 //middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+app.use(express.static("client/build"));
 
 //connect mongo
 const uri = process.env.MONGODB_URI;

@@ -29,13 +29,6 @@ const genresRouter = require('./routes/genres');
 
 app.use('/genres', genresRouter);
 
-// Send every other request to the React app
-// Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-
 
 app.listen(process.env.PORT || PORT, function() {
     console.log(`now listening on PORT ${PORT}`)
